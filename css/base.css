@@ -43,6 +43,12 @@ footer {
 	font-size:50px;
 }
 
+.circles:hover{
+	background:#D13A43;
+	color: #fff;
+	text-shadow:0 1px 0 #333;
+}
+
 .circle{
 	width:600px;
 	height:600px;
