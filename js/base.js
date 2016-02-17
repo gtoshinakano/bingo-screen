@@ -26,7 +26,25 @@ $(function() {
 });
 	
 $(document).ready(function(){
+	
 	$('.circles').css({ z: 'scale(5.2)' });
 	$("#der").transition({ x: 200 });
 	$('#der').css({ transform: 'scale(5.2)' });
+	
+	/**************************************
+	 * Circle box Controller
+	 **************************************/
+	$('.circle-box').click(function(){
+		
+		$(this).fadeOut(100);
+		
+	});
+	
+	/**************************************
+	 * Circle box Controller
+	 **************************************/
+	
+	
+	
+	
 });
