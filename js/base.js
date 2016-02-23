@@ -35,9 +35,8 @@ $(document).ready(function(){
 	$('#der').css({ transform: 'scale(5.2)' });
 	
 	/**************************************
-	 * Modal Btn Controller
+	 * show-number Btn Controller
 	 **************************************/
-
 	$('#show-number').on("click", function(){
 		
 		$('.alert').hide();
@@ -73,6 +72,23 @@ $(document).ready(function(){
 		
 	});
 	
+	/**************************************
+	 * show-bingo Btn Controller
+	 **************************************/
+	$('#show-bingo').on("click", function(){
+		
+		$("#show-bingo-dialog").modal();
+		var imgElement = $('.modal-bingo img');
+		imgElement.attr("src","img/bingo1.gif");
+		imgElement.fadeOut(1100, function(){
+			
+			imgElement.attr("src","img/bingo2.gif");
+			imgElement.fadeIn(400);
+			
+		});
+		
+		
+	});
 	
 	
 });
