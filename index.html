@@ -1,5 +1,6 @@
 <html>
 	<head>
+		<meta charset="utf-8">
 		<title>Bingo Hokkaido</title>
 		<link rel="stylesheet" href="css/bootstrap.min.css" />
 		<link rel="stylesheet" href="css/base.css" />
@@ -22,56 +23,31 @@
 		</header>
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-md-2 col-md-offset-1" id="b-col">
-					<div class="rounded">
-						<div class="circle-box">
-							<div class="circles"><span>4</span></div>
-						</div>
-						<div class="circle-box">
-							<div class="circles"><span>15</span></div>
-						</div>
-	
-						<br style="clear:both;">
-					</div>
-				</div>
-				<div class="col-md-2" id="i-col"><div class="rounded"><div class="circle-box">
-							<div class="circles"><span>17</span></div>
-						</div>
-						<div class="circle-box">
-							<div class="circles"><span>20</span></div>
-						</div>
-	<div class="circle-box">
-							<div class="circles"><span>23</span></div>
-						</div>
-						<div class="circle-box">
-							<div class="circles"><span>28</span></div>
-						</div>
-	
-					<div class="circle-box">
-							<div class="circles"><span>21</span></div>
-						</div>
-						<div class="circle-box">
-							<div class="circles"><span>30</span></div>
-						</div>
-	
-						<br style="clear:both;"></div></div>
-				<div class="col-md-2" id="n-col"><div class="rounded"></div></div>
-				<div class="col-md-2" id="g-col"><div class="rounded">
-					<div class="circle-box">
-							<div class="circles"><span>51</span></div>
-						</div>
-						<div class="circle-box">
-							<div class="circles"><span>63</span></div>
-						</div>
-	
-						<br style="clear:both;">
-				</div></div>
-				<div class="col-md-2" id="o-col"><div class="rounded"></div></div>
+				<div class="col-md-2 col-md-offset-1"><div class="rounded"><div id="b-col"></div><br style="clear:both;" /></div></div>
+				<div class="col-md-2"><div class="rounded"><div id="i-col"></div><br style="clear:both;" /></div></div>
+				<div class="col-md-2"><div class="rounded"><div id="n-col"></div><br style="clear:both;" /></div></div>
+				<div class="col-md-2"><div class="rounded"><div id="g-col"></div><br style="clear:both;" /></div></div>
+				<div class="col-md-2"><div class="rounded"><div id="o-col"></div><br style="clear:both;" /></div></div>
 			</div>
 		</div>
 		<footer>
-			<nav class="navbar navbar-inverse">
-				<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+			<nav class="navbar navbar-inverse" style="height:70px">
+				<div class="container-fluid">
+					<ul class="nav navbar-nav">
+						<li class="active"><input type="number" class="form-control input-sm" style="margin-top:8px" id="selected-number" placeholder="Digite o Número" /></li>
+						<li>-</li>
+						<li><button type="button" class="btn btn-primary btn-sm" id="show-number" style="margin-top:8px">Mostrar</button></li> 
+						<li>-</li>
+						<li><button type="button" class="btn btn-warning btn-sm" id="show-bingo" style="margin-top:8px" data-toggle="modal" data-target="#show-bingo-dialog">BINGO!</button></li> 
+						<li>-</li>
+						<li>
+							<div class="alert alert-danger" style="margin-top:8px; display:none">
+								<strong>Atenção :</strong> <span id="danger-message"></span>
+							</div>
+						</li>
+					</ul>
+				</div>
+				
 			</nav>
 		</footer>
 
@@ -79,11 +55,20 @@
 	
 	
 <!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
+<div id="show-number-dialog" class="modal fade" role="dialog">
   <div class="modal-dialog circle animated infinite pulse" >
-	<span><u class="">23</u></span>
+	<span><u id="inner-number"></u></span>
 
+  </div>
+</div>
+
+<div id="show-bingo-dialog" class="modal fade" role="dialog">
+  <div class="modal-dialog animated infinite pulse" >
+	<div class="modal-bingo">
+		<img src="img/bingo1.gif" />
+	</div>
   </div>
 </div>
 	
 </html>
+

@@ -24,6 +24,9 @@ $(function() {
 	$('.circle-box').css({'height':cw+'px'});
 	
 });
+
+
+var goneNumbers = [];
 	
 $(document).ready(function(){
 	
@@ -32,19 +35,56 @@ $(document).ready(function(){
 	$('#der').css({ transform: 'scale(5.2)' });
 	
 	/**************************************
-	 * Circle box Controller
+	 * Modal Btn Controller
 	 **************************************/
-	$('.circle-box').click(function(){
+
+	$('#show-number').on("click", function(){
 		
-		$(this).fadeOut(100);
+		$('.alert').hide();
+		
+		var selectedNumber = $("#selected-number").val(); 
+		
+		if(selectedNumber > 0 && selectedNumber <= 75){
+			
+			if(goneNumbers.indexOf(selectedNumber) < 0){
+				
+				goneNumbers.push(selectedNumber);
+				var container = (selectedNumber <= 15) ? "b-col" : (selectedNumber <= 30) ? "i-col" : (selectedNumber <= 45) ? "n-col" : (selectedNumber <= 60) ? "g-col" : (selectedNumber <= 75) ? "o-col" : "";
+				$('#inner-number').text(selectedNumber);
+				$("#show-number-dialog").modal();
+				$("#selected-number").val("");
+				$("#"+container).append('<div class="circle-box"><div class="circles"><span>'+selectedNumber+'</span></div></div>');
+				var cw = $('.circle-box').width();
+				$('.circle-box').css({'height':cw+'px'});
+			
+			}else{
+			
+				$('#danger-message').html("O número <b>" + selectedNumber + "</b> já saiu.");
+				$('.alert').fadeIn(500);
+				
+			}
+			
+		}else{
+			
+			$('#danger-message').text("Digite apenas números de 1 a 75.");
+			$('.alert').fadeIn(500);
+			
+		}
 		
 	});
 	
-	/**************************************
-	 * Circle box Controller
-	 **************************************/
 	
 	
+});
+
+/**************************************
+ * Circle box Controller
+ **************************************/
+$(document).on('click', '.circle-box', function(){
 	
+	var thisNumber = $(this).find('div.circles span').text();
+	var key = goneNumbers.indexOf(thisNumber);
+	goneNumbers.splice(key, 1);
+    $(this).remove();
 	
 });

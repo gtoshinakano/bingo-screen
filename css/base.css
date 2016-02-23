@@ -4,7 +4,7 @@ body{
 
 footer {
     position: fixed;
-    height: 50px;
+    height: 70px;
     bottom: 0;
     width: 100%;
 }
@@ -86,4 +86,21 @@ h1{
 	background: #f8f8f8;
 	padding-top: 10px;
 	box-shadow:1px 1px 2px #2f304e;
+}
+
+.rounded br{
+	display:block;
+	height:2px;
+}
+
+.modal-bingo{
+	
+	text-align:center;
+	background-color:#fff;
+	
+}
+.modal-bingo img{
+	 
+	width:100%
+	
 }
