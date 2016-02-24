@@ -6,6 +6,7 @@
 		<link rel="stylesheet" href="css/base.css" />
 		<link rel="stylesheet" href="css/bootstrap-theme.css" />
 		<link rel="stylesheet" href="css/animate.css" />
+		<link rel="stylesheet" href="css/font-awesome.min.css" />
 		<script src="js/jquery-1.12.0.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 		<script src="js/jquery.transit.min.js"></script>
@@ -30,7 +31,7 @@
 				<div class="col-md-2"><div class="rounded"><div id="o-col"></div><br style="clear:both;" /></div></div>
 			</div>
 			<div class="row text-center" style="text-align">
-				<h1>Jogo 5 - Televisão</h1>
+				<h2 id="prize-container"></h2>
 			</div>
 		</div>
 		<footer>
@@ -38,23 +39,25 @@
 				<div class="container-fluid">
 					<form>
 					<ul class="nav navbar-nav">
-						<form>
-						<li class="active"><input type="number" max="75" class="form-control input-sm" style="margin-top:8px" id="selected-number" placeholder="Digite o Número" /></li>
+
+						<li style="width:130px"><input type="number" max="75" class="form-control input-sm" style="margin-top:8px" id="selected-number" placeholder="Digite o Número" /></li>
 						<li>-</li>
-						<li><button type="submit" class="btn btn-primary btn-sm" id="show-number" style="margin-top:8px"><span class="glyphicon glyphicon-bullhorn"></span> Anunciar Número</button></li> 
+						<li><button type="submit" class="btn btn-primary btn-sm" id="show-number" style="margin-top:8px"><span class="glyphicon glyphicon-plus-sign"></span> Anunciar Número</button></li> 
 						<li>-</li>
-						</form>
-						<li><button type="button" class="btn btn-warning btn-sm" id="show-bingo" style="margin-top:8px"><span class="glyphicon glyphicon-star"></span> Anunciar BINGO!</button></li> 
+						<li><button type="button" class="btn btn-warning btn-sm" id="show-bingo" style="margin-top:8px"><span class="glyphicon glyphicon-bullhorn"></span> Anunciar BINGO!</button></li> 
 						<li>-</li>
 						<li>
 							<div class="alert alert-danger" style="margin-top:8px; display:none">
-								<strong>Atenção :</strong> <span id="danger-message"></span>
+								<span class="fa fa-paw"></span> <strong>Atenção :</strong> <span id="danger-message"></span>
 							</div>
 						</li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
-					  <li><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-					  <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+						<li style="width:65px"><input type="text" class="form-control input-sm" id="selected-serie" style="margin-top:8px" placeholder="Série" value="Série " maxlength="9" /></li>
+						<li>-</li>
+						<li><input type="text" class="form-control input-sm" id="selected-prize" style="margin-top:8px" placeholder="1º Prêmio" /></li>
+						<li>-</li>
+						<li style="margin-right:8px"><button type="button" class="btn btn-primary btn-sm" id="show-prize" style="margin-top:8px"><i class="glyphicon glyphicon-gift"></i> Mostrar prêmio</button></li> 
 					</ul>					
 				</div>
 				

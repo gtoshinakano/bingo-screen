@@ -70,7 +70,7 @@ $(document).ready(function(){
 			
 		}else{
 			
-			$('#danger-message').text("Digite apenas números de 1 a 75.");
+			$('#danger-message').html("Digite apenas números de <b>1 a 75</b>.");
 			$('.alert').fadeIn(500);
 			
 		}
@@ -85,7 +85,10 @@ $(document).ready(function(){
 	
 	$(this).keyup(function(e){
 		
-		if(e.keyCode == 27) $("#show-number-dialog").modal('hide');
+		if(e.keyCode == 27){
+			$("#show-number-dialog").modal('hide');
+			$("#show-bingo-dialog").modal('hide');
+		}
 		
 	});
 	
@@ -107,6 +110,26 @@ $(document).ready(function(){
 		
 	});
 	
+	/**************************************
+	 * show-prize Btn Controller
+	 **************************************/
+	$('#show-prize').click(function(){
+		
+		$('.alert').hide();
+		var selectedPrize = $("#selected-prize");
+		var selectedSerie = $("#selected-serie");
+		if(selectedPrize.val() != "" && selectedSerie.val() != ""){
+			
+			$("h2#prize-container").html('<b style="color:#D13A43">' + selectedSerie.val() +'</b> <i class="fa fa-trophy" ></i> ' + selectedPrize.val());
+			
+		}else{
+			
+			$('#danger-message').html("Digite a série e o primeiro prêmio <span class='glyphicon glyphicon-arrow-right'></span>");
+			$('.alert').fadeIn(500);
+			
+		}
+		
+	});
 	
 });
 
