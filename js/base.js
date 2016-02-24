@@ -57,7 +57,7 @@ $(document).ready(function(){
 				$('#inner-number').text(selectedNumber);
 				$("#show-number-dialog").modal();
 				$("#selected-number").val("");
-				$("#"+container).append('<div class="circle-box"><div class="circles"><span>'+selectedNumber+'</span></div></div>');
+				$("#"+container).append('<div class="circle-box"><div class="circles"><a class="close-number" href="#"><span>'+selectedNumber+'</span></a></div></div>');
 				var cw = $('.circle-box').width();
 				$('.circle-box').css({'height':cw+'px'});
 			
@@ -119,5 +119,11 @@ $(document).on('click', '.circle-box', function(){
 	var key = goneNumbers.indexOf(thisNumber);
 	goneNumbers.splice(key, 1);
     $(this).remove();
+	
+});
+
+$(document).on('click', 'a.close-number', function(e){
+	
+	e.preventDefault();
 	
 });

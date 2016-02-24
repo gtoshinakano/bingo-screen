@@ -105,3 +105,12 @@ h1{
 	width:100%
 	
 }
+
+a.close-number{
+	color:#000
+}
+
+a:hover.close-number{
+	text-decoration:none;
+	color:white;
+}
