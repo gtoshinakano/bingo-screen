@@ -33,11 +33,16 @@ $(document).ready(function(){
 	$('.circles').css({ z: 'scale(5.2)' });
 	$("#der").transition({ x: 200 });
 	$('#der').css({ transform: 'scale(5.2)' });
+	$(this).on("submit", "form", function(e){
+		
+		e.preventDefault();
+		
+	});
 	
 	/**************************************
 	 * show-number Btn Controller
 	 **************************************/
-	$('#show-number').on("click", function(){
+	$(this).on("click", '#show-number', function(){
 		
 		$('.alert').hide();
 		
@@ -72,6 +77,18 @@ $(document).ready(function(){
 		
 	});
 	
+	$("#show-number-dialog").on('hidden.bs.modal', function(){
+		
+		$("#selected-number").focus();
+		
+	});
+	
+	$(this).keyup(function(e){
+		
+		if(e.keyCode == 27) $("#show-number-dialog").modal('hide');
+		
+	});
+	
 	/**************************************
 	 * show-bingo Btn Controller
 	 **************************************/
@@ -80,7 +97,7 @@ $(document).ready(function(){
 		$("#show-bingo-dialog").modal();
 		var imgElement = $('.modal-bingo img');
 		imgElement.attr("src","img/bingo1.gif");
-		imgElement.fadeOut(1100, function(){
+		imgElement.fadeOut(1500, function(){
 			
 			imgElement.attr("src","img/bingo2.gif");
 			imgElement.fadeIn(400);
