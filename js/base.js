@@ -88,7 +88,9 @@ $(document).ready(function(){
 		if(e.keyCode == 27){
 			$("#show-number-dialog").modal('hide');
 			$("#show-bingo-dialog").modal('hide');
+			$("#selected-number").focus();
 		}
+		
 		
 	});
 	
@@ -142,6 +144,7 @@ $(document).on('click', '.circle-box', function(){
 	var key = goneNumbers.indexOf(thisNumber);
 	goneNumbers.splice(key, 1);
     $(this).remove();
+	$("#selected-number").focus();
 	
 });
 
